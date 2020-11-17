@@ -1,0 +1,108 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+/*template*/
+@import url('https://fonts.googleapis.com/css2?family=Prata&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap');
+.card {
+  margin: 2vw auto;
+  display: flex;
+  flex-direction: column;
+  background-color: rgb(215, 234, 235);
+  height: 50vh;
+  width: 40vw;
+  font-family: 'Source Code Pro', monospace;
+  font-size: 14px;
+  text-align: center;
+
+}
+
+.card img {
+  width: 100%;
+  padding: 0;
+}
+
+.card {
+  /* Add shadows to create the "card" effect */
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
+}
+
+/* On mouse-over, add a deeper shadow */
+.card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+/* Add some padding inside the card container */
+.card_container {
+  padding: 2px 16px;
+}
+
+#list {
+  display: grid;
+  margin: 3vw;
+}
+
+@media (min-width: 600px) {
+  #list { grid-template-columns: repeat(2, 1fr); }
+}
+
+input {
+  margin: 4vw;
+  width: 84vw;
+  height: 8vh;
+  background-size: cover;
+  border-radius: 5px;
+  padding-left: 5vw;
+  border-color: #476f7e;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 16px;
+}
+
+
+#searchlogo {
+  margin: 5vw;
+  position: absolute;
+  left: 0;
+  
+}
+
+#searchlogo img {
+  width: 2vw;
+}
+
+
+li {
+  display: inline;
+  margin-left: 2vw;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  margin-top: 2vh;
+  overflow: hidden;
+  background-color: transparent;
+}
+
+li {
+  float: left;
+  font-family: 'Prata', serif;
+  font-size: 18px;
+  color: #476f7e;
+  border-bottom: 1px  solid #476f7e ;
+}
+
