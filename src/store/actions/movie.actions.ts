@@ -5,19 +5,27 @@ import {
   FETCH_MOVIES_SUCCESS,
 } from '../../const/redux.const';
 
-import axios from 'axios'
-export const fetchMovies = (): any => ({
+
+import axios from 'axios';
+
+import MovieType from '../../Types/MovieTypes/MovieType';
+import MovieActionType from '../../Types/MovieTypes/MovieActionType';
+import MovieDetailType from '../../Types/MovieTypes/MovieDetailType';
+import MovieStateTxpe from '../../Types/MovieTypes/MovieStateType';
+
+export const fetchMovies = (): MovieActionType => ({
   type: FETCH_MOVIES,
-  isLoading: true,
+  //isLoading: true,
   movies: [],
 });
 
-export const fetchMoviesSuccess = (movies: any): any => ({
+export const fetchMoviesSuccess = (movies: MovieType[]): MovieActionType => ({
   type: FETCH_MOVIES_SUCCESS,
-  isLoading: false,
+  //isLoading: false,
   movies,
 });
 
+//error type
 export const fetchMoviesError = (error: any): any => ({
   type: FETCH_MOVIES_ERROR,
   isLoading: false,

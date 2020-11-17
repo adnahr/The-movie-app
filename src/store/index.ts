@@ -4,32 +4,19 @@ import { composeWithDevTools } from 'redux-devtools-extension';
 
 import rootReducer from './reducers';
 
-
-
-const initialState: any = {
-  search: '',
-  moviesState: {
-    error: undefined,
-    isLoading: undefined,
-    movies: []
-  },
-  tvShowsState: {
-    error: undefined,
-    isLoading: undefined,
-    tvShows: []
-  }
-};
-
-
 let middleware = [];
 
-
-  middleware = [thunk];
-  
-  const store = createStore(
-  rootReducer,
-  initialState,
-  composeWithDevTools(applyMiddleware(...middleware))
+middleware.push(thunk);
+const initialState = {
+	tvShowsState: {
+		twShows: [],
+		isLoading: true,
+	},
+};
+const store = createStore(
+	rootReducer,
+	//@ts-ignore
+	initialState,
+	composeWithDevTools(applyMiddleware(...middleware))
 );
 export default store;
-
