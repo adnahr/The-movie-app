@@ -1,15 +1,13 @@
 import React from 'react';
-import Card from '../Card';
 import Search from '../Search';
-import { log } from 'console';
-const TvShowList = (props: any) => {
+import Card from '../Card';
+const MovieList = (props: any) => {
 	return (
 		<div className="containter">
-			<Search />
 			<div className="list">
 				{
 					//@ts-ignore
-					props.tvShows.slice(0, 10).map((value, index) => {
+					props.movies.slice(0, 10).map((value, index) => {
 						//@ts-ignore
 						return <Card key={index} details={value} id={value.id} />;
 					})
@@ -19,4 +17,4 @@ const TvShowList = (props: any) => {
 	);
 };
 
-export default TvShowList;
+export default MovieList;

@@ -1,3 +1,4 @@
-export default interface ErrorType {
-    
-};
+export interface ErrorType {
+	code: number;
+	message: string;
+}

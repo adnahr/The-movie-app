@@ -1,6 +1,8 @@
-export default interface MovieDetailsType {
-  id: number;
-  picture: string | null;
-  title: string;
-  about: string | null;
+export interface MovieDetailsType {
+	id: number;
+	poster_path: string;
+	title: string;
+	original_language: string;
+	first_air_date: Date;
+	overview: string;
 }

@@ -1,61 +1,53 @@
-import { Dispatch } from 'redux';
+import Axios from 'axios';
 import {
-  FETCH_MOVIES,
-  FETCH_MOVIES_ERROR,
-  FETCH_MOVIES_SUCCESS,
+	REQUEST_MOVIES,
+	REQUEST_MOVIES_ERROR,
+	REQUEST_MOVIES_SUCCESS,
 } from '../../const/redux.const';
+import { API_URLS } from '../../const/redux.const';
+import Movie from '../../Types/MovieTypes/MovieType';
 
-
-import axios from 'axios';
-
-import MovieType from '../../Types/MovieTypes/MovieType';
-import MovieActionType from '../../Types/MovieTypes/MovieActionType';
-import MovieDetailType from '../../Types/MovieTypes/MovieDetailType';
-import MovieStateTxpe from '../../Types/MovieTypes/MovieStateType';
-
-export const fetchMovies = (): MovieActionType => ({
-  type: FETCH_MOVIES,
-  //isLoading: true,
-  movies: [],
-});
-
-export const fetchMoviesSuccess = (movies: MovieType[]): MovieActionType => ({
-  type: FETCH_MOVIES_SUCCESS,
-  //isLoading: false,
-  movies,
-});
-
-//error type
-export const fetchMoviesError = (error: any): any => ({
-  type: FETCH_MOVIES_ERROR,
-  isLoading: false,
-  error,
-  movies: [] as any,
-});
-
-export const loadMovies = () => async (dispatch: Dispatch) => {
-  dispatch(fetchMovies());
-  try {
-    const {
-      data: { results: moviesResult },
-    } = await axios.get('/movie/top_rated');
-    dispatch(fetchMoviesSuccess(moviesResult.splice(0, 10)));
-  } catch (err) {
-    dispatch(fetchMoviesError(err.response.data));
-  }
+export const requestMoviesSuccess = (movies: Movie[]) => {
+	return {
+		type: REQUEST_MOVIES_SUCCESS,
+		payload: {
+			movies: movies,
+		},
+	};
 };
-export const searchMovies = (query: string) => async (dispatch: Dispatch) => {
-  dispatch(fetchMovies());
-  try {
-    const {
-      data: { results: moviesResult },
-    } = await axios.get('/search/movie', {
-      params: {
-        query,
-      },
-    });
-    dispatch(fetchMoviesSuccess(moviesResult));
-  } catch (err) {
-    dispatch(fetchMoviesError(err.response.data));
-  }
+
+export const requestMoviesFailure = (error: any) => {
+	return {
+		type: REQUEST_MOVIES_ERROR,
+	};
+};
+
+export const requestMoviesLoading = () => {
+	return {
+		type: REQUEST_MOVIES,
+	};
+};
+export const requestMovies = () => {
+	return async (dispatch: any) => {
+		dispatch(requestMoviesLoading());
+		try {
+			const data = await Axios.get(API_URLS.MOVIES);
+			dispatch(requestMoviesSuccess(data.data.results));
+		} catch (err: any) {
+			dispatch(requestMoviesFailure(err));
+		}
+	};
+};
+
+export const searchMovies = (search: string) => {
+	return async (dispatch: any) => {
+		dispatch(requestMoviesLoading());
+		try {
+			const data = await Axios.get(API_URLS.SEARCH_MOVIE(search));
+			console.log('SEARCH MOVIES', data);
+			dispatch(requestMoviesSuccess(data.data.results));
+		} catch (err: any) {
+			dispatch(requestMoviesFailure(err));
+		}
+	};
 };

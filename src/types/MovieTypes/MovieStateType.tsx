@@ -1,7 +1,6 @@
 import MovieType from './MovieType';
 
-
-export default interface MovieStateType {
-  isLoading: boolean | null;
-  movies: MovieType[];
+export interface MovieStateType {
+	isLoading: boolean;
+	movies: MovieType[];
 }

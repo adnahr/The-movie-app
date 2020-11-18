@@ -1,42 +1,42 @@
+import { act } from 'react-dom/test-utils';
+import MovieList from '../../Components/Movie/MovieList';
 import {
-  FETCH_MOVIES,
-  FETCH_MOVIES_ERROR,
-  FETCH_MOVIES_SUCCESS,
+	REQUEST_MOVIES_ERROR,
+	REQUEST_MOVIES_SUCCESS,
+	REQUEST_MOVIES,
 } from '../../const/redux.const';
+import { MovieStateType } from '../../Types/MovieTypes/MovieStateType';
+//import { requestMovieSuccess } from '../actions/movies.actions';
 
-const initialState: any = {
-  movies: [],
-  isLoading: undefined,
-  error: undefined,
+const initialState: MovieStateType = {
+	movies: [],
+	isLoading: false,
 };
 
-const moviesReducer = (
-  state = initialState,
-  action: any
-): any => {
-  switch (action.type) {
-    case FETCH_MOVIES:
-      return {
-        ...state,
-        isLoading: action.isLoading,
-        movies: [] as any,
-      };
-    case FETCH_MOVIES_SUCCESS:
-      return {
-        ...state,
-        isLoading: action.isLoading,
-        movies: action.movies,
-      };
-    case FETCH_MOVIES_ERROR:
-      return {
-        ...state,
-        isLoading: action.isLoading,
-        error: action.error,
-        movies: [] as any,
-      };
-    default:
-      return state;
-  }
-};
+export const MovieReducer = (
+	state = initialState,
+	action: any
+): MovieStateType => {
+	switch (action.type) {
+		case REQUEST_MOVIES:
+			return {
+				...state,
+				isLoading: true,
+			};
+		case REQUEST_MOVIES_SUCCESS:
+			return {
+				...state,
+				isLoading: false,
+				movies: action.payload.movies,
+			};
 
-export default moviesReducer;
+		case REQUEST_MOVIES_ERROR:
+			return {
+				...state,
+				isLoading: false,
+			};
+
+		default:
+			return state;
+	}
+};

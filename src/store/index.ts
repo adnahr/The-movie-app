@@ -7,10 +7,18 @@ import rootReducer from './reducers';
 let middleware = [];
 
 middleware.push(thunk);
+
 const initialState = {
 	tvShowsState: {
 		twShows: [],
 		isLoading: true,
+	},
+	moviesState: {
+		movies: [],
+		isLoading: true,
+	},
+	searchState: {
+		search: '',
 	},
 };
 const store = createStore(

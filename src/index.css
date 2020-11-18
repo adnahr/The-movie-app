@@ -5,7 +5,7 @@ body {
 		sans-serif;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
-	background-color: rgb(24, 21, 21);
+	background-color: rgb(88, 88, 88);
 }
 
 code {
@@ -18,15 +18,28 @@ code {
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Big+Shoulders+Inline+Text:wght@600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Libre+Franklin&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Balsamiq+Sans:ital@1&display=swap');
+
 .card {
 	margin: 2vw auto;
 	display: flex;
 	flex-direction: column;
-	background-color: rgba(215, 234, 235, 0.7);
+	/*background-color: rgba(215, 234, 235, 0.7);*/
+	background-image: linear-gradient(
+		45.8deg,
+		rgba(175, 104, 254, 1) 9.3%,
+		rgba(101, 223, 255, 1) 75.1%
+	);
 	height: 70vh;
 	width: 40vw;
-	font-family: 'Source Code Pro', monospace;
+	/*font-family: 'Source Code Pro', monospace;*/
+	font-family: 'Balsamiq Sans', cursive;
+
+	letter-spacing: 0.2em;
 	font-size: 14px;
+	color: white;
 	text-align: center;
 }
 
@@ -38,7 +51,7 @@ code {
 
 .card {
 	/* Add shadows to create the "card" effect */
-	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+	box-shadow: 0 4px 8px 0 rgba(255, 255, 255, 0.2);
 	transition: 0.3s;
 }
 
@@ -52,13 +65,13 @@ code {
 	padding: 2px 16px;
 }
 
-#list {
+.list {
 	display: grid;
 	margin: 3vw;
 }
 
 @media (min-width: 600px) {
-	#list {
+	.list {
 		grid-template-columns: repeat(2, 1fr);
 	}
 }
@@ -70,20 +83,20 @@ input {
 	background-size: cover;
 	border-radius: 5px;
 	padding-left: 5vw;
-	border-color: #476f7e;
+	border: 2px solid rgb(101, 223, 255);
 	font-family: 'Montserrat', sans-serif;
 	font-size: 16px;
-	color: white;
-	background-color: rgb(24, 21, 21);
+	color: rgb(101, 223, 255);
+	background-color: rgb(88, 88, 88);
 }
 
-#searchlogo {
+.searchlogo {
 	margin: 5vw;
 	position: absolute;
 	left: 0;
 }
 
-#searchlogo img {
+.searchlogo img {
 	width: 2vw;
 }
 
@@ -106,4 +119,43 @@ li {
 	font-size: 18px;
 	color: #a6b8be;
 	border-bottom: 1px solid #a6b8be;
+}
+
+.backbutton {
+	margin: 5vw;
+	background-color: transparent;
+	border-radius: 50%;
+	border: 1px solid rgb(175, 104, 254);
+	color: rgb(175, 104, 254);
+}
+
+.backbutton img {
+	height: 5vh;
+}
+
+.navbar a {
+	color: rgb(101, 223, 255);
+}
+
+a {
+	text-decoration: none;
+}
+
+.detail-container {
+	margin: 5%;
+}
+
+.detail-container iframe,
+.detail-container img {
+	width: 100%;
+	height: 100%;
+}
+
+.detail-container h1 {
+	color: rgb(101, 223, 255);
+}
+
+.detail-container p {
+	color: rgb(184, 230, 241);
+	word-spacing: 0.3em;
 }

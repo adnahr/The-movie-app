@@ -1,5 +1,5 @@
 export default interface MovieType {
-  id: number;
-  title: string;
-  about: string | null;
+	id: number;
+	title: string;
+	overview: string;
 }

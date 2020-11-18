@@ -8,19 +8,20 @@ import Axios from 'axios';
 import Proba from './Types/df';
 import TvShowList from './Components/Tv Show/TvShowList';
 import { logDOM } from '@testing-library/react';
-import TvShowPage from './Pages/TvShowPage';
-const indexPage: React.FC = () => <div> Hello </div>;
-const a: Proba = {
-	a: 'gsg',
-};
-
+import TvShowPage from './Pages/TVShowPages/TvShowPage';
+import TvShowDetailPage from './Pages/TVShowPages/TvShowDetailPage';
+import MoviePage from './Pages/MoviePages/MoviePage';
+import MovieDetailPage from './Pages/MoviePages/MovieDetailPage';
+import history from './history';
 function app() {
 	return (
 		<Provider store={store}>
-			<Router>
-				<Switch>
-					<Route exact path="/" component={TvShowPage} />
-				</Switch>
+			{/*@ts-ignore*/}
+			<Router forceRefresh={false} history={history}>
+				<Route path="/" exact component={TvShowPage} />
+				<Route path="/tvshows/:id" component={TvShowDetailPage} />
+				<Route path="/movies" exact component={MoviePage} />
+				<Route path="/movies/:id" component={MovieDetailPage} />
 			</Router>
 		</Provider>
 	);
