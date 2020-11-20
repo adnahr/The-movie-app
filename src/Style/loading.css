@@ -24,7 +24,7 @@
 }
 
 .infinity-loader > .fg > div > div {
-	border-color: rgb(231, 8, 111) rgb(231, 8, 111) transparent transparent;
+	border-color: #e7086f #e7086f transparent;
 	transform: rotate(135deg);
 	animation: spin 1s linear infinite;
 	position: static;
@@ -62,7 +62,7 @@
 }
 
 .infinity-loader > .fg {
-	filter: drop-shadow(0 0 6px orangered);
+	filter: drop-shadow(0 0 6px #e7086f);
 }
 
 @keyframes spin {

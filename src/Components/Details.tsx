@@ -4,6 +4,9 @@ import '../Style/detail.css';
 import { MovieType, TvShowType } from '../Types';
 
 const Details: React.FC<{ data: MovieType & TvShowType }> = ({ data }) => {
+	const first_release = data.first_air_date
+		? 'First release: ' + data.first_air_date
+		: '';
 	return (
 		<div className="detail-container">
 			{data.videos && data.videos.results && data.videos.results.length ? (
@@ -15,8 +18,13 @@ const Details: React.FC<{ data: MovieType & TvShowType }> = ({ data }) => {
 			)}
 
 			<h1>{data.original_title ? data.original_title : data.original_name}</h1>
-			<h2>First release: {data.first_air_date}</h2>
-			<p>{data.overview}</p>
+			{first_release ? (
+				<div>
+					<h2>{first_release}</h2> <p>{data.overview}</p>
+				</div>
+			) : (
+				<p>{data.overview}</p>
+			)}
 		</div>
 	);
 };

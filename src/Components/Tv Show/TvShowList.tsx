@@ -4,6 +4,7 @@ import Card from '../Card';
 import Search from '../Search';
 
 const TvShowList: React.FC<{ tvShows: TvShowType[] }> = ({ tvShows }) => {
+	if (tvShows.length == 0) return <div>No TV Shows avaliable!</div>;
 	return (
 		<div className="containter">
 			<Search />

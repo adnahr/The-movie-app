@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import '../Style/card.css';
 import Image from '../Components/Image';
 import { MovieType, TvShowType } from '../Types';
+
 const Card: React.FC<{ details: MovieType & TvShowType }> = ({ details }) => {
 	return (
 		<div>

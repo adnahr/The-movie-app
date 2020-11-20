@@ -1,5 +1,5 @@
 import Axios from 'axios';
-import { Dispatch } from 'react';
+import { Dispatch } from 'redux';
 import {
 	REQUEST_TV_SHOWS,
 	REQUEST_TV_SHOWS_ERROR,
@@ -29,7 +29,7 @@ export const requestTvShowsLoading = () => {
 	};
 };
 export const requestTvShows = () => {
-	return async (dispatch: any) => {
+	return async (dispatch: Dispatch) => {
 		dispatch(requestTvShowsLoading());
 		try {
 			const data = await Axios.get(API_URLS.TV_SHOWS);
@@ -41,7 +41,7 @@ export const requestTvShows = () => {
 };
 
 export const searchTvShows = (search: string) => {
-	return async (dispatch: any) => {
+	return async (dispatch: Dispatch) => {
 		dispatch(requestTvShowsLoading());
 		try {
 			const data = await Axios.get(API_URLS.SEARCH_TV_SHOW(search));

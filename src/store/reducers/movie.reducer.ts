@@ -4,7 +4,6 @@ import {
 	REQUEST_MOVIES,
 } from '../../const/redux.const';
 import { MovieActionType, MovieStateType } from '../../Types';
-//import { requestMovieSuccess } from '../actions/movies.actions';
 
 const initialState: MovieStateType = {
 	movies: [],

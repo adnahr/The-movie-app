@@ -17,14 +17,13 @@ body {
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 	background-color: white;
+	color: #e7086f;
 }
 
 code {
 	font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
 		monospace;
 }
-
-/* */
 
 .list {
 	display: grid;
@@ -57,4 +56,10 @@ code {
 
 a {
 	text-decoration: none;
+}
+
+.error {
+	margin: 30%;
+	text-align: center;
+	font-size: large;
 }
