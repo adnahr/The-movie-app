@@ -2,6 +2,16 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+# Install the Movie App
+<center>
+  <ul>
+    <li> git clone
+      https://github.com/adnahr/The-movie-app</li>
+    <li> open the folder The-movie-app</li>
+    <li> npm install --save</li>
+  </ul>
+</center>
+
 ## Available Scripts
 
 In the project directory, you can run:
@@ -44,3 +54,5 @@ You don’t have to ever use `eject`. The curated feature set is suitable for sm
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
 To learn React, check out the [React documentation](https://reactjs.org/).
+
+#### Copyright 2020 Adna Hrnjic
