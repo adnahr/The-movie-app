@@ -41,3 +41,10 @@
 .card_container {
 	padding: 2px 16px;
 }
+
+@media (max-width: 600px) {
+	.card {
+		width: 90vw;
+		height: 80vh;
+	}
+}

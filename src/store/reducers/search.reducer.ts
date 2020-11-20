@@ -1,12 +1,14 @@
-import { SEARCH } from '../../const/redux.const';
-import { SearchType } from '../../Types';
+import { SEARCH } from '../../const'
+import { SearchType } from '../../Types'
 
-export const SearchReducer = (state = { search: '' }, action: SearchType) => {
-	switch (action.type) {
-		case SEARCH:
-			return action.payload;
+const SearchReducer = (state = { search: '' }, action: SearchType) => {
+  switch (action.type) {
+    case SEARCH:
+      return action.payload
 
-		default:
-			return state;
-	}
-};
+    default:
+      return state
+  }
+}
+
+export default SearchReducer

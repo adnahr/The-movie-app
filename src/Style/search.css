@@ -1,3 +1,9 @@
+.search {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+}
+
 input {
 	margin: 4vw;
 	width: 84vw;
@@ -14,13 +20,11 @@ input {
 }
 
 .searchlogo {
-	margin: 5vw;
 	position: absolute;
-	left: 0;
 }
-
 .searchlogo img {
-	width: 2vw;
+	margin: 5vw;
+	width: 25px;
 }
 
 li {
