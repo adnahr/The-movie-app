@@ -5,7 +5,6 @@ import Logo from './Pictures/search_logo.png';
 import { API_URLS } from './const/redux.const';
 import store from './store';
 import Axios from 'axios';
-import Proba from './Types/df';
 import TvShowList from './Components/Tv Show/TvShowList';
 import { logDOM } from '@testing-library/react';
 import TvShowPage from './Pages/TVShowPages/TvShowPage';

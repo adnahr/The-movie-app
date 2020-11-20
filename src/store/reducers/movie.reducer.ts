@@ -1,21 +1,20 @@
-import { act } from 'react-dom/test-utils';
-import MovieList from '../../Components/Movie/MovieList';
 import {
 	REQUEST_MOVIES_ERROR,
 	REQUEST_MOVIES_SUCCESS,
 	REQUEST_MOVIES,
 } from '../../const/redux.const';
-import { MovieStateType } from '../../Types/MovieTypes/MovieStateType';
+import { MovieActionType, MovieStateType } from '../../Types';
 //import { requestMovieSuccess } from '../actions/movies.actions';
 
 const initialState: MovieStateType = {
 	movies: [],
 	isLoading: false,
+	error: undefined,
 };
 
 export const MovieReducer = (
 	state = initialState,
-	action: any
+	action: MovieActionType
 ): MovieStateType => {
 	switch (action.type) {
 		case REQUEST_MOVIES:

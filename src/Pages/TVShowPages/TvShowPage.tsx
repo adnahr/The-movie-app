@@ -6,12 +6,13 @@ import {
 	requestTvShows,
 	searchTvShows,
 } from '../../store/actions/tv.show.actions';
-const TvShowPage = (props: any) => {
+import Loading from '../../Components/Loading';
+
+const TvShowPage: React.FC = () => {
 	const dispatch = useDispatch();
 	//@ts-ignore
 	const { tvShows, isLoading } = useSelector((state) => state.tvShowsState);
 	const { search } = useSelector((state: any) => state.searchState);
-	console.log('SEACHING', search);
 	useEffect(() => {
 		if (search.length) {
 			dispatch(searchTvShows(search));
@@ -19,7 +20,7 @@ const TvShowPage = (props: any) => {
 			dispatch(requestTvShows());
 		}
 	}, [search]);
-	if (isLoading) return <div>Loading</div>;
+	if (isLoading) return <Loading isLoading={isLoading} />;
 
 	return (
 		<div>
@@ -34,6 +35,7 @@ const TvShowPage = (props: any) => {
 					</li>
 				</ul>
 			</nav>
+
 			<TvShowList tvShows={tvShows} />
 		</div>
 	);

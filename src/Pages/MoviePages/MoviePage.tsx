@@ -1,14 +1,19 @@
 import React, { useEffect } from 'react';
 import MovieList from '../../Components/Movie/MovieList';
-import { Link } from 'react-router-dom';
+import { Link, RouteComponentProps } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { searchMovies, requestMovies } from '../../store/actions/movie.actions';
 import Search from '../../Components/Search';
-const MoviePage = (props: any) => {
+import { AppStateType, MovieStateType, SearchStateType } from '../../Types';
+import Loading from '../../Components/Loading';
+const MoviePage: React.FC = () => {
 	const dispatch = useDispatch();
-	//@ts-ignore
-	const { movies, isLoading } = useSelector((state) => state.moviesState);
-	const { search } = useSelector((state: any) => state.searchState);
+	const { movies, isLoading } = useSelector<AppStateType, MovieStateType>(
+		(state) => state.moviesState
+	);
+	const { search } = useSelector<AppStateType, SearchStateType>(
+		(state) => state.searchState
+	);
 	useEffect(() => {
 		if (search.length) {
 			dispatch(searchMovies(search));
@@ -16,6 +21,7 @@ const MoviePage = (props: any) => {
 			dispatch(requestMovies());
 		}
 	}, [search]);
+	if (isLoading) return <Loading isLoading={isLoading} />;
 	return (
 		<div>
 			<nav className="navbar">

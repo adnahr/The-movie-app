@@ -3,9 +3,10 @@ import React, { useState, useEffect } from 'react';
 import Button from '../../Components/Button';
 import Details from '../../Components/Details';
 import { API_URLS } from '../../const/redux.const';
-import { ErrorType } from '../../Types/ErrorType';
-import { isPropertyAssignment } from 'typescript';
-const MovieDetailPage: React.FC = (props: any) => {
+import { RouteComponentProps } from 'react-router';
+const MovieDetailPage: React.FC<RouteComponentProps<{ id: string }>> = (
+	props
+) => {
 	const [movie, setMovie] = useState({});
 	const [loading, setLoading] = useState(true);
 	useEffect(() => {
@@ -16,15 +17,14 @@ const MovieDetailPage: React.FC = (props: any) => {
 				});
 				setMovie(data.data);
 				setLoading(false);
-			} catch (err: any) {}
+			} catch (err) {}
 		};
 		requestDetails(props.match.params.id);
 	}, [loading]);
 	return (
 		<div>
-			{/*@ts-ignore*/}
-			<Button history={props.history} />
-			<Details movie={movie} />
+			<Button />
+			<Details data={movie} />
 		</div>
 	);
 };

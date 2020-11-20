@@ -1,27 +1,26 @@
 import React from 'react';
-import { URL } from '../const/redux.const';
 import { Link } from 'react-router-dom';
-const Card = (props: any) => {
+import '../Style/card.css';
+import Image from '../Components/Image';
+import { MovieType, TvShowType } from '../Types';
+const Card: React.FC<{ details: MovieType & TvShowType }> = ({ details }) => {
 	return (
 		<div>
-			{props.details.original_title ? (
-				<Link to={'/movies/' + props.details.id}>
+			{details.original_title ? (
+				<Link to={'/movies/' + details.id}>
 					<div className="card">
-						<img
-							src={URL + props.details.poster_path}
-							alt="No picture avaliable"
-						/>
+						<Image source={details.poster_path} />
 						<h1>
-							<b>{props.details.original_title}</b>
+							<b>{details.original_title}</b>
 						</h1>
 					</div>
 				</Link>
 			) : (
-				<Link to={'/tvshows/' + props.id}>
+				<Link to={'/tvshows/' + details.id}>
 					<div className="card">
-						<img src={URL + props.details.poster_path} />
+						<Image source={details.poster_path} />
 						<h1>
-							<b>{props.details.original_name}</b>
+							<b>{details.original_name}</b>
 						</h1>
 					</div>
 				</Link>

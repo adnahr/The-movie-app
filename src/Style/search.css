@@ -1,0 +1,45 @@
+input {
+	margin: 4vw;
+	width: 84vw;
+	height: 8vh;
+	background-size: cover;
+	border-radius: 5px;
+	padding-left: 5vw;
+	border: 2px solid rgb(231, 8, 111);
+	outline: 0;
+	font-family: 'Montserrat', sans-serif;
+	font-size: 16px;
+	color: black;
+	background-color: white;
+}
+
+.searchlogo {
+	margin: 5vw;
+	position: absolute;
+	left: 0;
+}
+
+.searchlogo img {
+	width: 2vw;
+}
+
+li {
+	display: inline;
+	margin-left: 2vw;
+}
+
+ul {
+	list-style-type: none;
+	margin: 0;
+	margin-top: 2vh;
+	overflow: hidden;
+	background-color: transparent;
+}
+
+li {
+	float: left;
+	font-family: 'Prata', serif;
+	font-size: 18px;
+	color: #a6b8be;
+	border-bottom: 1px solid #a6b8be;
+}

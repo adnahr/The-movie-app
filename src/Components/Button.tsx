@@ -2,12 +2,13 @@ import React from 'react';
 import backButton from '../Pictures/back_logo.png';
 
 import history from '../history';
-import { withRouter } from 'react-router';
-const Button: React.FC = (prop: any) => {
-	//let history = useHistory();
+import { RouteComponentProps, withRouter, WithRouterProps } from 'react-router';
+import { BrowserRouterProps } from 'react-router-dom';
+import { History } from 'history';
+
+const Button: React.FC = () => {
 	return (
-		/*@ts-ignore*/
-		<button className="backbutton" onClick={() => prop.history.goBack()}>
+		<button className="backbutton" onClick={() => history.back()}>
 			<img src={backButton} />
 		</button>
 	);

@@ -2,8 +2,13 @@ import React, { useEffect, useState } from 'react';
 import Logo from '../Pictures/search_logo.png';
 import { useSelector, useDispatch } from 'react-redux';
 import { searchAction } from '../store/actions/search.actions';
+import '../Style/search.css';
+import { AppStateType, SearchStateType } from '../Types';
+
 const Search: React.FC = () => {
-	const { search } = useSelector((state: any) => state.searchState);
+	const { search } = useSelector<AppStateType, SearchStateType>(
+		(state) => state.searchState
+	);
 	const [inputValue, setInputValue] = useState<string>(search);
 	const dispatch = useDispatch();
 	useEffect(() => {
@@ -16,7 +21,6 @@ const Search: React.FC = () => {
 		}, 3000);
 		return () => clearTimeout(clt);
 	}, [dispatch, inputValue]);
-	console.log('inuput', inputValue);
 	return (
 		<div className="search">
 			<div className="searchlogo">

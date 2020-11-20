@@ -1,17 +1,14 @@
 import React from 'react';
-import Search from '../Search';
 import Card from '../Card';
-const MovieList = (props: any) => {
+import { MovieStateType, MovieType } from '../../Types';
+
+const MovieList: React.FC<{ movies: MovieType[] }> = ({ movies }) => {
 	return (
 		<div className="containter">
 			<div className="list">
-				{
-					//@ts-ignore
-					props.movies.slice(0, 10).map((value, index) => {
-						//@ts-ignore
-						return <Card key={index} details={value} id={value.id} />;
-					})
-				}
+				{movies.slice(0, 10).map((value, index) => {
+					return <Card key={index} details={value} />;
+				})}
 			</div>
 		</div>
 	);

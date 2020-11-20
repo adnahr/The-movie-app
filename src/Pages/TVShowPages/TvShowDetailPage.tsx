@@ -1,12 +1,14 @@
 import Axios from 'axios';
 import React, { useState, useEffect } from 'react';
+import { RouteComponentProps } from 'react-router';
 import Button from '../../Components/Button';
 import Details from '../../Components/Details';
-import TvShowType from '../../Types/TvShowTypes/TvShowType';
 import { API_URLS } from '../../const/redux.const';
-import { ErrorType } from '../../Types/ErrorType';
-import { isPropertyAssignment } from 'typescript';
-const TvShowDetailPage: React.FC = (props: any) => {
+import { TvShowType } from '../../Types';
+
+const TvShowDetailPage: React.FC<RouteComponentProps<{ id: string }>> = (
+	props
+) => {
 	const [tvShow, setTvShow] = useState({});
 	const [loading, setLoading] = useState(true);
 	useEffect(() => {
@@ -17,14 +19,13 @@ const TvShowDetailPage: React.FC = (props: any) => {
 				});
 				setTvShow(data.data);
 				setLoading(false);
-			} catch (err: any) {}
+			} catch (err) {}
 		};
 		requestDetails(props.match.params.id);
 	}, [loading]);
 	return (
 		<div>
-			{/*@ts-ignore*/}
-			<Button history={props.history} />
+			<Button />
 			<Details data={tvShow} />
 		</div>
 	);

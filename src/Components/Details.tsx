@@ -1,26 +1,22 @@
 import React from 'react';
-import { URL } from '../const/redux.const';
-const Details = (props: any) => {
+import Image from './Image';
+import '../Style/detail.css';
+import { MovieType, TvShowType } from '../Types';
+
+const Details: React.FC<{ data: MovieType & TvShowType }> = ({ data }) => {
 	return (
 		<div className="detail-container">
-			{props.data.videos &&
-			props.data.videos.results &&
-			props.data.videos.results.length ? (
+			{data.videos && data.videos.results && data.videos.results.length ? (
 				<iframe
-					src={
-						'https://www.youtube.com/embed/' + props.data.videos.results[0].key
-					}
+					src={'https://www.youtube.com/embed/' + data.videos.results[0].key}
 				></iframe>
 			) : (
-				<img src={URL + props.data.poster_path} />
+				<Image source={data.poster_path} />
 			)}
 
-			<h1>
-				{props.data.original_name
-					? props.data.original_name
-					: props.data.original_title}
-			</h1>
-			<p>{props.data.overview}</p>
+			<h1>{data.original_title ? data.original_title : data.original_name}</h1>
+			<h2>First release: {data.first_air_date}</h2>
+			<p>{data.overview}</p>
 		</div>
 	);
 };
