@@ -8,7 +8,8 @@ const TvShowList: React.FC<{ tvShows: TvShowType[] }> = ({ tvShows }) => {
     <div className="containter">
       <div className="list">
         {tvShows.slice(0, 10).map((value, index) => {
-          return <Card key={`card-${index}`} details={value} />
+          const id = index
+          return <Card key={`card-${id}`} details={value} />
         })}
       </div>
     </div>

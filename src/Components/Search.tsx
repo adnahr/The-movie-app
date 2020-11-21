@@ -2,8 +2,8 @@ import React, { useEffect, useState } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import Logo from '../Pictures/search_logo.png'
 import searchAction from '../store/actions/search.actions'
-import '../Style/search.css'
 import { AppStateType, SearchStateType } from '../Types'
+import '../Style/search.css'
 
 const Search: React.FC = () => {
   const { search } = useSelector<AppStateType, SearchStateType>((state) => state.searchState)

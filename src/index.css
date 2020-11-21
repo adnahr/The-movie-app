@@ -2,62 +2,65 @@
 @import url('https://fonts.googleapis.com/css2?family=Prata&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap');
 body {
-	margin: 0;
-	font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-		'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-		sans-serif;
-	font-family: 'Montserrat', sans-serif;
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
-	background-color: white;
-	color: #e7086f;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans',
+    'Droid Sans', 'Helvetica Neue', sans-serif;
+  font-family: 'Montserrat', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: white;
+  color: #e7086f;
 }
 
 code {
-	font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-		monospace;
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
 }
 
+/* list */
+
 .list {
-	display: grid;
-	margin: 3vw;
+  display: grid;
+  margin: 3vw;
 }
 
 @media (min-width: 600px) {
-	.list {
-		grid-template-columns: repeat(2, 1fr);
-	}
+  .list {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
-.backbutton {
-	margin: 2vw;
-	background-color: transparent;
-	border: none;
-	outline: 0;
+/*back button*/
+
+.back-button {
+  margin: 2vw;
+  background-color: transparent;
+  border: none;
+  outline: 0;
 }
 
-.backbutton img {
-	height: 15vh;
+.back-button img {
+  height: 15vh;
 }
 
+/* navbar*/
 .navbar {
-	padding-left: 2.5vw;
+  padding-left: 2.5vw;
 }
 
 .navbar a {
-	color: black;
+  color: black;
 }
 .navbar :hover {
-	color: #e7086f;
+  color: #e7086f;
 }
 
 a {
-	text-decoration: none;
+  text-decoration: none;
 }
 
 .error,
 .no-avaliable-list {
-	margin: 20%;
-	text-align: center;
-	font-size: large;
+  margin: 20%;
+  text-align: center;
+  font-size: large;
 }

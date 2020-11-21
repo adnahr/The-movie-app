@@ -8,7 +8,8 @@ const MovieList: React.FC<{ movies: MovieType[] }> = ({ movies }) => {
     <div className="containter">
       <div className="list">
         {movies.slice(0, 10).map((value, index) => {
-          return <Card key={`card-${index}`} details={value} />
+          const id = index
+          return <Card key={`card-${id}`} details={value} />
         })}
       </div>
     </div>

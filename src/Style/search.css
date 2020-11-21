@@ -1,49 +1,49 @@
 .search {
-	display: flex;
-	flex-direction: row;
-	align-items: center;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 }
 
 input {
-	margin: 4vw;
-	width: 84vw;
-	height: 8vh;
-	background-size: cover;
-	border-radius: 5px;
-	padding-left: 5vw;
-	border: 2px solid rgb(231, 8, 111);
-	outline: 0;
-	font-family: 'Montserrat', sans-serif;
-	font-size: 16px;
-	color: black;
-	background-color: white;
+  margin: 4vw;
+  width: 84vw;
+  height: 8vh;
+  background-size: cover;
+  border-radius: 5px;
+  padding-left: 5vw;
+  border: 2px solid rgb(231, 8, 111);
+  outline: 0;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 16px;
+  color: black;
+  background-color: white;
 }
 
 .searchlogo {
-	position: absolute;
+  position: absolute;
 }
 .searchlogo img {
-	margin: 5vw;
-	width: 25px;
+  margin: 5vw;
+  width: 25px;
 }
 
 li {
-	display: inline;
-	margin-left: 2vw;
+  display: inline;
+  margin-left: 2vw;
 }
 
 ul {
-	list-style-type: none;
-	margin: 0;
-	margin-top: 2vh;
-	overflow: hidden;
-	background-color: transparent;
+  list-style-type: none;
+  margin: 0;
+  margin-top: 2vh;
+  overflow: hidden;
+  background-color: transparent;
 }
 
 li {
-	float: left;
-	font-family: 'Prata', serif;
-	font-size: 18px;
-	color: #a6b8be;
-	border-bottom: 1px solid #a6b8be;
+  float: left;
+  font-family: 'Prata', serif;
+  font-size: 18px;
+  color: #a6b8be;
+  border-bottom: 1px solid #a6b8be;
 }
